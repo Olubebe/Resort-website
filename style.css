@@ -1,0 +1,304 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+header {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)), url('/images/background.jpg');
+    width: 100%;
+    position: fixed;
+    height: 100vh;
+    z-index: 999;
+    color: black;
+    display: grid;
+     text-align: left;  
+    background-size: cover;
+}
+
+.logo {
+justify-self: center;
+margin-top: 1em;
+} 
+
+nav {
+    position: absolute;
+    top:10%;
+    left: 2%;   
+    transform: scale(1, 0);
+    transform-origin:top;
+    transition: transform 400ms ease-in-out;
+}
+ 
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav li {
+    margin-bottom: 1em;
+    margin-left: 1em;
+}
+
+nav a {
+    color:black;
+    text-decoration: none ;
+    font-size: 1.2rem; 
+    text-transform: uppercase;
+    opacity: 0;
+    transition: opacity 150ms ease-in-out;
+}
+
+nav a:hover {
+    color: white; 
+}
+ 
+.nav-toggle {
+    display: none;
+  
+}
+
+.nav-toggle:checked ~ nav {
+   transform: scale(1,1);
+} 
+
+.nav-toggle:checked ~ nav a {
+opacity: 1;
+transition: opacity 250ms ease-in-out 250ms;
+}
+
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+    display: block;
+    background:white;
+    height: 2px;
+    width: 2em;
+    border-radius: 2px;
+    position: relative;
+}
+
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+    content: " ";
+    position: absolute;
+}
+
+.nav-toggle-label span::before {
+    bottom: 7px;
+}
+.nav-toggle-label span::after {
+    top: 7px;
+}
+
+.nav-toggle-label {
+    position: absolute; 
+    top: 0; 
+    left:0;
+    margin-left: 1em;
+    margin-top: 2em;
+    height: 100%;
+    display: flex;
+} 
+
+.nav-right {
+    display: none;
+}
+
+.Hero {
+    text-align: center;
+}
+
+.hero-section {
+    font-size: 2rem;
+    color: white;
+}
+
+ .hero-left {
+    opacity: 0;
+} 
+
+.container{
+    background: whitesmoke;
+}
+
+.container-wrap {
+    background: gray;
+}
+
+
+@media screen and (min-width: 1100px) {
+    .nav-toggle-label {
+        display: none;
+    }
+
+    header {
+        display: grid;
+        grid-template-columns: 1fr auto minmax(500px, 1fr) 1fr;
+    }
+    
+    .logo {
+        text-align: center;
+        margin-top: 1em;
+        grid-column: 2 / 4;
+    }
+    
+    nav {
+        all: unset ;
+        text-align: center;
+        position: absolute;
+        top: 3%;
+        left: 0;
+        grid-column: 1/2;
+    }
+
+    nav ul {
+        display: flex;
+        justify-content: flex-start;
+    }
+    nav li {
+     margin-left: 3em;
+     margin-bottom: 0;
+    }
+
+    nav a {
+        opacity: 1;
+        color: white;
+    }
+
+    .nav-right {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        padding-right: 3em;
+        margin-top: 1em;
+        grid-column: 4 / 5;
+    }
+    
+    .num {
+        color: white;
+        padding-right: 5px;
+        font-size: 14px;
+        font-weight: bold;
+       
+    }
+    
+    .btn {
+        background-color: rgb(163, 14, 44);
+        font-size: 1rem;
+        margin-left: 2em;
+        cursor: pointer;
+        font-weight: bold;
+        height: 50px;
+        width: 200px;
+        border-radius: 6px;
+        outline: none;
+        border: none;
+        color: white;
+    }
+
+   .Hero {
+       position: absolute;
+       top: 50%;
+       align-items:center;
+       left: 50%;
+       text-align: center;
+      transform: translate( -50%, -50%);
+   }
+
+    .hero-wrap {
+        display: flex;
+        grid-column: 2/ 4;
+    }
+    .hero-section {
+    justify-self: center;
+    color: white;
+    font-size: 4rem;
+}
+
+.hero-left {
+        opacity: 1;
+    
+      grid-column: 2/4; 
+      align-items: center;
+      display: flex;
+      
+    }
+    
+    .hero-room--1 {
+        background: rgba(255, 255, 255, 0.904);   
+        /* padding: 5px; */
+        border-radius: 5px;
+
+        height: 30%;
+        width: 100%;
+        align-items: center;
+        justify-content: space-between;
+        display: flex;
+    }
+
+    .hero-1 {
+        text-align: left;
+        padding-right: 2em; 
+    }
+
+    .hero-2 {
+        text-align: left;
+        padding-left: 2em;
+    }
+
+    .hero-light {
+        color: rgb(92, 91, 91);
+        font-weight:bolder;
+        font-size: small;
+    }
+    .hero-bold {
+        font-size: 0.8rem;
+        padding-top: 1rem;
+        word-spacing: 1px;
+        font-weight:bold ;
+    }
+
+    .hero-btn {
+        align-items: center;
+    }
+
+    .hero-btn_room{
+        border-radius: 5px;
+        background: black;
+        font-weight: bold;
+        word-spacing: 1px;
+        align-items: center;
+        text-align: center;
+        cursor: pointer;
+          width: 100%; 
+        height: 16vh;
+         color: white;
+    }  
+
+  /* resort */
+  .resort{
+      padding: 0 1rem;
+  }
+     .container{
+         position: relative;
+         display: flex;
+         background: whitesmoke;
+     }
+
+     .container-wrap{
+         background: rgb(143, 138, 138, 0.2);
+     }
+
+
+}
+
+
+
+
+
